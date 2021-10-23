@@ -36,7 +36,10 @@ a.menu__item__logo {
 .menu__item__items {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
+    max-width: 500px;
+    width: 100%;
+    flex-grow: 1;
 }
 
 a.menu__item {

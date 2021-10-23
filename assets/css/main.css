@@ -120,5 +120,5 @@ a.menu__item anim {
 
 .onappear{
     display: initial !important;
-    animation: 2s appear ease-in-out;
+    animation: 1s appear ease-in-out;
 }

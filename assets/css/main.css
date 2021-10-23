@@ -107,10 +107,10 @@ a.menu__item anim {
 
 @keyframes appear{
     from{
-        transform: scale(0);
+        opacity: 0;
     }
     to{
-       transform: scale(1); 
+       opacity: 1; 
     }
 }
 
@@ -120,5 +120,5 @@ a.menu__item anim {
 
 .onappear{
     display: initial !important;
-    animation: 4s appear ease-in-out;
+    animation: 2s appear ease-in-out;
 }

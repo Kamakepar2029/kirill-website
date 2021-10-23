@@ -6,4 +6,12 @@
     .content__box__items div{
         margin:10px 0px;
     }
+
+    .menu {
+        padding: 10px 30px;
+    }
+    
+    .menu__item{
+        padding: 10px 10px;
+    }
 }

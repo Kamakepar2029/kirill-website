@@ -104,3 +104,21 @@ a.menu__item anim {
     max-width: 640px;
     width: 100%;
 }
+
+@keyframes appear{
+    from{
+        transform: scale(0);
+    }
+    to{
+       transform: scale(1); 
+    }
+}
+
+.content__box .content__box__items > div {
+    display: none;
+}
+
+.onappear{
+    display: initial !important;
+    animation: 4s appear ease-in-out;
+}

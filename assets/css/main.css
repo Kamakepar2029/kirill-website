@@ -194,6 +194,14 @@ img.kali {
     visibility: visible;
 }
 
+.content__box__right__layer__bottom anim{
+    display: none;
+}
+
+.content__box__left__layer__bottom anim{
+    display: none;
+}
+
 img.centos {
     filter: grayscale(1) contrast(1.5) brightness(1.5);
 }
@@ -201,7 +209,6 @@ img.centos {
 anim {
     width: 100%;
     border: 1px solid #fff;
-    display: none;
 }
 
 .content__box__right__layer__top img:hover {filter: none;}

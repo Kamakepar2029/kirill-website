@@ -271,6 +271,9 @@ anim {
 
 .content__box__center__layer__top {
     flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .content__box__left__layer__center {

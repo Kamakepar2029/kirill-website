@@ -110,33 +110,40 @@ function onAppear(th){
     console.log('appear');
 }
 
-window.onscroll = function(){
-    if (come(".content__box__layers")) {
-        if ($(".content__box__layers")[0].classList.contains('onappear-flex')){
-            let rgh = 0;
-        }else{
-            $(".content__box__layers")[0].classList.add('onappear-flex');
-            $(".content__box__right__layer__bottom")[0].classList.add('uline');
-            $(".content__box__left__layer__bottom")[0].classList.add('uline');
-            $(".content__box__center__layer__bottom")[0].classList.add('uline');
-            $('.content__box__left__layer__bottom anim')[0].classList.add('uline-anim');
-            $('.content__box__right__layer__bottom anim')[0].classList.add('uline-anim');
-            $(".content__box__center__layer__bottom anim")[0].classList.add('uline-anim');
-        }
-    }
-
-    if (come(".content_box__description__langs")){
-      if ($(".content_box__description__langs")[0].classList.contains('onappear-flex')){
-        let rgh = 0;
-    }else{
-        $(".content_box__description__langs")[0].classList.add('onappear-flex');
-    }
-    }
-}
-
 $('.content__box__left__layer__bottom').on('appear', onAppear(this));
 
 document.addEventListener("DOMContentLoaded", function(event) {
         dc('.content__box__left').classList.add('onappear');
         dc('.content__box__right').classList.add('onappear');
+        window.onscroll = function(){
+          if (come(".content__box__layers")) {
+              if ($(".content__box__layers")[0].classList.contains('onappear-flex')){
+                  let rgh = 0;
+              }else{
+                  $(".content__box__layers")[0].classList.add('onappear-flex');
+                  $(".content__box__right__layer__bottom")[0].classList.add('uline');
+                  $(".content__box__left__layer__bottom")[0].classList.add('uline');
+                  $(".content__box__center__layer__bottom")[0].classList.add('uline');
+                  $('.content__box__left__layer__bottom anim')[0].classList.add('uline-anim');
+                  $('.content__box__right__layer__bottom anim')[0].classList.add('uline-anim');
+                  $(".content__box__center__layer__bottom anim")[0].classList.add('uline-anim');
+              }
+          }
+      
+          if (come(".content_box__description__langs")){
+            if ($(".content_box__description__langs")[0].classList.contains('onappear-flex')){
+              let rgh = 0;
+            }else{
+                $(".content_box__description__langs")[0].classList.add('onappear-flex');
+            }
+          }
+
+          if (come(".content__box__my__works")){
+            if ($(".content__box__my__works")[0].classList.contains('onappear-flex')){
+              let rgh = 0;
+            }else{
+              $(".content__box__my__works")[0].classList.add('onappear-flex');
+            }
+          }
+      }
 });

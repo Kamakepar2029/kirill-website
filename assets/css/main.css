@@ -338,7 +338,7 @@ div#Contacts {
     z-index: 100000;
 }
 
-.dliu {padding: 10px 20px;align-items: center;display: flex;}
+.dliu {padding: 10px 20px;align-items: center;display: flex;visibility: hidden;}
 
 .dliu a {
     text-decoration: none;

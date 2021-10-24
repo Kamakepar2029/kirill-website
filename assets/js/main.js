@@ -138,5 +138,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 $(".content__box__my__works")[0].classList.add('onappear-flex');
             }
           }
+
+          if (come(".dliu")){
+            if ($(".dliu")[2].classList.contains('onappear-flex')){
+              let rgh = 0;
+            }else{
+              $(".dliu")[0].classList.add('onappear-flex');
+              $(".dliu")[1].classList.add('onappear-flex');
+              $(".dliu")[2].classList.add('onappear-flex');
+            }
+          }
       }
 });

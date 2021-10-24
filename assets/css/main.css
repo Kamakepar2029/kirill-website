@@ -325,8 +325,10 @@ anim {
 }
 
 div#Contacts {
-    min-height: calc(100% - 70px);
+    min-height: calc(100vh - 70px);
     padding-top: 70px;
+    padding: 10px 50px;
+    max-width: calc(100% - 100px);
 }
 
 .menu {
@@ -335,3 +337,23 @@ div#Contacts {
     background: #010302;
     z-index: 100000;
 }
+
+.dliu {padding: 10px 20px;align-items: center;display: flex;}
+
+.dliu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.dliu a * {
+    font-size: 20px;
+    margin: 0px 20px;
+}
+
+.dliu img {
+    filter: grayscale(1) brightness(1000);
+}
+

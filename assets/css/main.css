@@ -182,7 +182,7 @@ img.kali {
 
 .uline-anim{
     animation: 2s just_underline ease-in-out;
-    display: flex;
+    display: flex !important;
 }
 
 .uline {

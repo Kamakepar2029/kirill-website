@@ -357,3 +357,7 @@ div#Contacts {
     filter: grayscale(1) brightness(1000);
 }
 
+
+.frame {
+    max-width: 460px;
+}

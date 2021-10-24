@@ -135,14 +135,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
               let rgh = 0;
             }else{
                 $(".content_box__description__langs")[0].classList.add('onappear-flex');
-            }
-          }
-
-          if (come(".content__box__my__works")){
-            if ($(".content__box__my__works")[0].classList.contains('onappear-flex')){
-              let rgh = 0;
-            }else{
-              $(".content__box__my__works")[0].classList.add('onappear-flex');
+                $(".content__box__my__works")[0].classList.add('onappear-flex');
             }
           }
       }

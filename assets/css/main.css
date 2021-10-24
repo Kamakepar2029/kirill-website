@@ -221,3 +221,18 @@ anim {
 .content_box__description__langs img:hover {
     filter: none;
 }
+
+.content__box__left__layer__top img {
+    height: 95px;
+    width: auto;
+}
+
+.content__box__right__layer__top img {
+    height: 100px;
+    width: auto;
+}
+
+.content__box.ddfg {
+    min-height: 100%;
+    height: min-content;
+}

@@ -14,4 +14,22 @@
     .menu__item{
         padding: 10px 10px;
     }
+
+    .content__box__left__layer__top img {
+        height: initial;
+        width: initial;
+    }
+    
+    .content__box__right__layer__top img {
+        height: initial;
+        width: initial;
+    }
+
+    .content__box__layers {
+        flex-direction: column;
+    }
+
+    .content_box__description__langs {
+        flex-wrap: wrap;
+    }
 }

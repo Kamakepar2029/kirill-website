@@ -122,6 +122,14 @@ window.onscroll = function(){
             $('.content__box__right__layer__bottom anim')[0].classList.add('uline-anim');
         }
     }
+
+    if (come(".content_box__description__langs")){
+      if ($(".content_box__description__langs")[0].classList.contains('onappear-flex')){
+        let rgh = 0;
+    }else{
+        $(".content_box__description__langs")[0].classList.add('onappear-flex');
+    }
+    }
 }
 
 $('.content__box__left__layer__bottom').on('appear', onAppear(this));

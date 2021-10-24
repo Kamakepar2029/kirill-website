@@ -38,6 +38,14 @@
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.content__box.tyui{
+    height: 100%;
+}
+
 .menu {
     padding: 10px 50px;
     display: flex;
@@ -263,7 +271,6 @@ anim {
     padding: 10px 50px;
     display: flex;
     justify-content: space-around;
-    height: 320px;
     flex-wrap: wrap;
     background-size: cover;
     visibility: hidden;
@@ -315,4 +322,16 @@ anim {
     color: #fff;
     font-size: 20px;
     animation: .5s appear ease-in-out;
+}
+
+div#Contacts {
+    min-height: calc(100% - 70px);
+    padding-top: 70px;
+}
+
+.menu {
+    position: fixed;
+    width: calc(100% - 100px);
+    background: #010302;
+    z-index: 100000;
 }

@@ -44,4 +44,11 @@
     .content__box__my__works__asset{
         height: 200px;
     }
+
+    .menu {
+        position: fixed;
+        width: calc(100% - 60px);
+        background: #010302;
+        z-index: 100000;
+    }
 }

@@ -9,6 +9,15 @@
     }
 }
 
+@keyframes just_underline{
+    from{
+        width:0px;
+    }
+    to{
+        width:100%;
+    }
+}
+
 @keyframes underline{
     from{
         width:0%;
@@ -122,4 +131,93 @@ a.menu__item anim {
 .onappear{
     display: initial !important;
     animation: 1s appear ease-in-out;
+}
+
+.onappear-flex{
+    display: flex !important;
+    animation: 1s appear ease-in-out;
+    visibility: visible !important;
+}
+
+.onappear-block{
+    display: flex !important;
+    animation: 1s appear ease-in-out;
+}
+
+.content_box__description {
+    padding: 10px 50px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.content__box__layers {
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+img.debian {filter: contrast(0) grayscale(1) brightness(100);}
+
+img.ubuntu {
+    filter: grayscale(3.2) contrast(9);
+}
+
+img.kali {
+    filter: grayscale(1) contrast(0) brightness(100);
+}
+
+.content__box__left__layer__top img {
+    cursor: pointer;
+}
+
+.content__box__left__layer__top img:hover {
+    filter: none;
+}
+
+.content__box__layers {
+    color: #fff;
+    text-align: center;
+    visibility: hidden;
+}
+
+.uline-anim{
+    animation: 2s just_underline ease-in-out;
+    display: flex;
+}
+
+.uline {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+}
+
+img.centos {
+    filter: grayscale(1) contrast(1.5) brightness(1.5);
+}
+
+anim {
+    width: 100%;
+    border: 1px solid #fff;
+    display: none;
+}
+
+.content__box__right__layer__top img:hover {filter: none;}
+
+.content_box__description__langs {
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    visibility: hidden;
+}
+
+.content_box__description__langs img {
+    filter: grayscale(1) brightness(1.5);
+}
+
+.content_box__description__langs img:hover {
+    filter: none;
 }

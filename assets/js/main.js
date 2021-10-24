@@ -118,8 +118,10 @@ window.onscroll = function(){
             $(".content__box__layers")[0].classList.add('onappear-flex');
             $(".content__box__right__layer__bottom")[0].classList.add('uline');
             $(".content__box__left__layer__bottom")[0].classList.add('uline');
+            $(".content__box__center__layer__bottom")[0].classList.add('uline');
             $('.content__box__left__layer__bottom anim')[0].classList.add('uline-anim');
             $('.content__box__right__layer__bottom anim')[0].classList.add('uline-anim');
+            $(".content__box__center__layer__bottom anim")[0].classList.add('uline-anim');
         }
     }
 

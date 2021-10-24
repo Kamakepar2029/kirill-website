@@ -32,4 +32,16 @@
     .content_box__description__langs {
         flex-wrap: wrap;
     }
+
+    .content__box__layers > div{
+        margin:20px 0;
+    }
+
+    .content__box__left__layer__center img{
+        width: 100%;
+    }
+
+    .content__box__my__works__asset{
+        height: 250px;
+    }
 }

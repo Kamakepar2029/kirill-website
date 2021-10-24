@@ -269,6 +269,15 @@ anim {
     visibility: hidden;
 }
 
+.content__box__center__layer__top {
+    flex-grow: 1;
+}
+
+.content__box__left__layer__center {
+    display: flex;
+    flex-direction: column;
+}
+
 .content__box__my__works__asset {
     max-width: 550px;
     height: 315px;

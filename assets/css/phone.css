@@ -51,4 +51,9 @@
         background: #010302;
         z-index: 100000;
     }
+
+    .content__box.rtyu{
+        padding: 10px 20px;
+        max-width: calc(100% - 40px);
+    }
 }

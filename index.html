@@ -1,113 +1,611 @@
-<html>
-    <head>
-        <title>Kirill Sverchkov</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/assets/css/common.css?v=0.1" >
-        <link rel="stylesheet" href="/assets/css/main.css?v=0.19">
-        <link rel="stylesheet" href="/assets/css/phone.css?v=0.11">
-        <link rel="stylesheet" href="/assets/css/prog.css?v=0.1">
-    </head>
-    <body>
-        <div class="content__box tyui" id="Home">
-            <div class="menu">
-                <a class="menu__item__logo" href="/">KS</a>
-                <div class="menu__item__items">
-                    <a class="menu__item" href="#Home">Home<anim></anim></a>
-                    <a class="menu__item" href="#About">About<anim></anim></a>
-                    <a class="menu__item" href="#Contacts">Contacts<anim></anim></a>
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Kirill Sverchkov, a Software & Information Systems Developer skilled in JavaScript, Python, and Android development.">
+    <meta name="keywords" content="Kirill Sverchkov, software developer, JavaScript, Python, Android, web development, portfolio">
+    <meta name="author" content="Kirill Sverchkov">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Kirill Sverchkov - Software Developer">
+    <meta property="og:description" content="Explore the portfolio of Kirill Sverchkov, showcasing innovative web and mobile solutions built with JavaScript, Python, and Android.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kirill.kamakepar.ru">
+    <meta property="og:image" content="https://kirill.kamakepar.ru/og-image.jpg">
+    <meta property="og:site_name" content="Kirill Sverchkov Portfolio">
+    <meta property="og:locale" content="en_US">
+    <title>Kirill Sverchkov - Software Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": "https://kirill.kamakepar.ru/#person",
+                "name": "Kirill Sverchkov",
+                "jobTitle": "Software & Information Systems Developer",
+                "url": "https://kirill.kamakepar.ru",
+                "sameAs": [
+                    "https://www.linkedin.com/in/kirill-sverchkov-ssa",
+                    "mailto:ptiza2029@gmail.com"
+                ],
+                "description": "Kirill Sverchkov is a passionate developer specializing in JavaScript, Python, and Android development, creating scalable and user-focused solutions."
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://kirill.kamakepar.ru/#website",
+                "url": "https://kirill.kamakepar.ru",
+                "name": "Kirill Sverchkov Portfolio",
+                "description": "Portfolio showcasing Kirill Sverchkov's projects in web and mobile development.",
+                "publisher": {
+                    "@id": "https://kirill.kamakepar.ru/#person"
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        body {
+            background-color: #1A1A1A;
+            color: #E5E5E5;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+        .hero {
+            background: linear-gradient(135deg, #2A2A2A, #4B0082, #00D4FF);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            background: #333333;
+            color: #E5E5E5;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .btn:hover {
+            background: #444444;
+            transform: scale(1.05);
+        }
+        .btn i {
+            margin-left: 5px;
+            width: 12px;
+            height: 12px;
+        }
+        .project-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #333333;
+            color: #E5E5E5;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            font-size: 0.9rem;
+        }
+        .project-btn:hover {
+            background: #444444;
+            transform: scale(1.05);
+        }
+        .project-btn i {
+            margin-left: 5px;
+            width: 12px;
+            height: 12px;
+        }
+        .section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .skill-bar {
+            background: #2A2A2A;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .skill-progress {
+            background: linear-gradient(90deg, #00D4FF, #8A2BE2);
+            height: 20px;
+            transition: width 1s ease-in-out;
+        }
+        .project-card {
+            background: #2A2A2A;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        .tech-tag {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            margin: 5px 5px 0 0;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 20px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #00D4FF;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #00D4FF;
+        }
+        .testimonial-card {
+            background: #2A2A2A;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        .tool-card {
+            background: #2A2A2A;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        .tool-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+            filter: invert(1);
+        }
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .lang-btn {
+            background: #333333;
+            color: #E5E5E5;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .lang-btn:hover {
+            background: #444444;
+        }
+        .lang-btn.active {
+            background: #00D4FF;
+            color: #1A1A1A;
+        }
+        .contact-card {
+            background: #2A2A2A;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            text-align: center;
+        }
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(90deg, #00D4FF, #FF69B4);
+            z-index: -1;
+            border-radius: 12px;
+        }
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            color: #00D4FF;
+            margin: 10px 20px;
+            transition: transform 0.3s ease, text-decoration 0.3s ease;
+        }
+        .contact-link:hover {
+            transform: translateY(-3px);
+            text-decoration: underline;
+        }
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
+        .contact-link:hover .contact-icon {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
+    </div>
+
+    <section class="hero" data-aos="fade-up">
+        <div>
+            <h1 class="text-5xl font-bold" data-translate="hero.title">Kirill Sverchkov</h1>
+            <p class="text-2xl mt-4" data-translate="hero.subtitle">Software & Information Systems Developer</p>
+            <p class="text-lg mt-2 opacity-75" data-translate="hero.description">Building innovative web and mobile solutions with JavaScript, Python, and Android.</p>
+            <a href="#projects" class="btn mt-6" data-translate="hero.cta">View My Work <i data-feather="folder"></i></a>
+        </div>
+    </section>
+
+    <section class="section" id="about" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6" data-translate="about.title">About Me</h2>
+        <p class="text-lg" data-translate="about.description">I’m a passionate developer with expertise in building web and mobile applications. Skilled in JavaScript, Python, and Android development, I create scalable, user-focused solutions for real-world problems.</p>
+    </section>
+
+    <section class="section" id="experience" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6" data-translate="experience.title">Experience</h2>
+        <div class="timeline-item">
+            <h3 class="text-xl font-semibold" data-translate="experience.sber.title">Main Maintenance Engineer</h3>
+            <p class="text-sm opacity-75" data-translate="experience.sber.period">Sberbank (now Sber), 2022–Present</p>
+            <p data-translate="experience.sber.description">Responsible for maintaining and optimizing critical systems, ensuring high availability and performance.</p>
+        </div>
+        <div class="timeline-item">
+            <h3 class="text-xl font-semibold" data-translate="experience.telsi.title">System Administrator</h3>
+            <p class="text-sm opacity-75" data-translate="experience.telsi.period">OOO SKB Telsi, June 2021–July 2022</p>
+            <p data-translate="experience.telsi.description">Managed IT infrastructure, including servers and networks, to support business operations.</p>
+        </div>
+    </section>
+
+    <section class="section" id="skills" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6" data-translate="skills.title">Skills</h2>
+        <div class="space-y-4">
+            <div>
+                <p data-translate="skills.js">JavaScript</p>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
             </div>
-            <div class="content__box__items">
-                <div class="content__box__left">
-                    <div class="content__title">Hi, User</div>
-                    <div class="content__description">My name is Kirill Sverchkov and I am a system administrator.</div>
-                </div>
-                <div class="content__box__right">
-                    <img src="/assets/images/head.jpeg">
-                </div>
+            <div>
+                <p data-translate="skills.jsx">JSX</p>
+                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+            </div>
+            <div>
+                <p data-translate="skills.react">React</p>
+                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+            </div>
+            <div>
+                <p data-translate="skills.vue">Vue</p>
+                <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+            </div>
+            <div>
+                <p data-translate="skills.nextjs">Next.js</p>
+                <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+            </div>
+            <div>
+                <p data-translate="skills.python">Python</p>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+            </div>
+            <div>
+                <p data-translate="skills.fastapi">FastAPI</p>
+                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+            </div>
+            <div>
+                <p data-translate="skills.php">PHP</p>
+                <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
             </div>
         </div>
-        <div class="content__box ddfg" id="About">
-            <div class="content_box__description">I can administrate: </div>
-            <div class="content__box__layers">
-                <div class="content__box__left__layer__left">
-                    <div class="content__box__left__layer__top">
-                        <img src="/assets/images/image 2debian_logo.png" class="debian">
-                        <img src="/assets/images/image 3ubuntu_logo.png" class="ubuntu">
-                        <img src="/assets/images/image 4kali_logo.png" class="kali">
-                    </div>
-                    <div class="content__box__left__layer__bottom">
-                        Gnu/Linux Distributions<anim></anim>
-                    </div>
-                </div>
-                <div class="content__box__left__layer__center">
-                    <div class="content__box__center__layer__top">
-                        <img src="/assets/images/image 10windows_server_logo.png" class="windows10">
-                    </div>
-                    <div class="content__box__center__layer__bottom">
-                        Windows Server<anim></anim>
-                    </div>
-                </div>
-                <div class="content__box__left__layer__right">
-                    <div class="content__box__right__layer__top">
-                        <img src="/assets/images/image 5centos_logo.png" class="centos">
-                    </div>
-                    <div class="content__box__right__layer__bottom">
-                        Red Hat Enterprise Linux<anim></anim>
-                    </div>
-                </div>
-            </div>
-            <div class="content_box__description">I know languages: </div>
-            <div class="content_box__description__langs">
-                <img src="/assets/images/image 6java_logo.png" class="java">
-                <img src="/assets/images/image 7php_logo.png" class="php">
-                <img src="/assets/images/flask_bg_trans 1flask_logo.png" class="flask">
-                <img src="/assets/images/image 8web_logo.png" class="web">
-                <img src="/assets/images/image 9python_logo.png" class="python">
-            </div>
-            <div class="content_box__description">My works: </div>
-            <div class="content__box__my__works">
-                <div class="content__box__my__works__asset">
-                    <div class="imgasset" style="background-image:url('/assets/images/projects/veltry_proj.png');">
-                        <div class="huty">
-                            Veltry is a project, in which an internet shop was created.
-                        </div>
-                    </div>
-                </div>
+    </section>
 
-                <div class="content__box__my__works__asset">
-                    <div class="imgasset" style="background-image:url('/assets/images/projects/warticles_proj.png');">
-                        <div class="huty">
-                            Warticles is a project, in which you can create a blog.
-                        </div>
-                    </div>
-                </div>
+    <section class="section" id="projects" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6" data-translate="projects.title">Projects</h2>
+        <div id="projects-container" class="space-y-6"></div>
+    </section>
 
-                <div class="content__box__my__works__asset">
-                    <div class="imgasset" style="background-image:url('/assets/images/projects/winix_os_proj.png');">
-                        <div class="huty">
-                            Winix is an os, written in JavaScript and styled by css.
-                        </div>
+    <section class="section" id="testimonials" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6" data-translate="testimonials.title">Testimonials</h2>
+        <div class="space-y-6">
+            <div class="testimonial-card">
+                <p class="italic" data-translate="testimonials.telsi.quote">“The AIMFinder program, along with other automation Kirill developed, greatly helped us.”</p>
+                <p class="text-sm opacity-75 mt-2" data-translate="testimonials.telsi.author">— SKB Telsi</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="italic" data-translate="testimonials.mcoffee.quote">“Thanks for the MCoffee app; we can now offer discounts and promotions to our customers faster and more conveniently.”</p>
+                <p class="text-sm opacity-75 mt-2" data-translate="testimonials.mcoffee.author">— MCoffee Shop</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="tools" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6" data-translate="tools.title">Tools & Workflow</h2>
+        <p class="text-lg mb-6" data-translate="tools.description">I leverage modern tools to streamline development and deliver high-quality, efficient code.</p>
+        <div class="tools-grid">
+            <div class="tool-card">
+                <img src="https://api.iconify.design/vscode-icons:file-type-vscode.svg" alt="VS Code" class="tool-icon">
+                <p data-translate="tools.vscode">VS Code</p>
+            </div>
+            <div class="tool-card">
+                <img src="https://simpleicons.org/icons/git.svg" alt="Git" class="tool-icon">
+                <p data-translate="tools.git">Git</p>
+            </div>
+            <div class="tool-card">
+                <img src="https://simpleicons.org/icons/docker.svg" alt="Docker" class="tool-icon">
+                <p data-translate="tools.docker">Docker</p>
+            </div>
+            <div class="tool-card">
+                <img src="https://simpleicons.org/icons/postman.svg" alt="Postman" class="tool-icon">
+                <p data-translate="tools.postman">Postman</p>
+            </div>
+            <div class="tool-card">
+                <img src="https://simpleicons.org/icons/figma.svg" alt="Figma" class="tool-icon">
+                <p data-translate="tools.figma">Figma</p>
+            </div>
+            <div class="tool-card">
+                <img src="https://simpleicons.org/icons/pycharm.svg" alt="PyCharm" class="tool-icon">
+                <p data-translate="tools.pycharm">PyCharm</p>
+            </div>
+            <div class="tool-card">
+                <img src="https://simpleicons.org/icons/npm.svg" alt="npm" class="tool-icon">
+                <p data-translate="tools.npm">npm</p>
+            </div>
+            <div class="tool-card">
+                <img src="https://simpleicons.org/icons/webpack.svg" alt="Webpack" class="tool-icon">
+                <p data-translate="tools.webpack">Webpack</p>
+            </div>
+            <div class="tool-card">
+                <img src="https://simpleicons.org/icons/linux.svg" alt="Linux" class="tool-icon">
+                <p data-translate="tools.linux">Linux</p>
+            </div>
+            <div class="tool-card">
+                <img src="https://simpleicons.org/icons/jupyter.svg" alt="Jupyter" class="tool-icon">
+                <p data-translate="tools.jupyter">Jupyter</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6 text-center" id="contact-title" data-translate="contact.title">Get in Touch</h2>
+        <div class="contact-card" data-aos="zoom-in">
+            <p class="text-lg mb-4" data-translate="contact.invite">Feel free to reach out to discuss projects or opportunities!</p>
+            <div class="flex justify-center flex-wrap">
+                <a href="mailto:ptiza2029@gmail.com" class="contact-link" data-translate="contact.email">
+                    <i data-feather="mail" class="contact-icon"></i>
+                    ptiza2029@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/kirill-sverchkov-ssa" class="contact-link" data-translate="contact.linkedin">
+                    <i data-feather="linkedin" class="contact-icon"></i>
+                    LinkedIn Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        const translations = {
+            en: {
+                "hero.title": "Kirill Sverchkov",
+                "hero.subtitle": "Software & Information Systems Developer",
+                "hero.description": "Building innovative web and mobile solutions with JavaScript, Python, and Android.",
+                "hero.cta": "View My Work",
+                "about.title": "About Me",
+                "about.description": "I’m a passionate developer with expertise in building web and mobile applications. Skilled in JavaScript, Python, and Android development, I create scalable, user-focused solutions for real-world problems.",
+                "experience.title": "Experience",
+                "experience.sber.title": "Middle Maintenance Engineer",
+                "experience.sber.period": "Sberbank (now Sber), 2022–Present",
+                "experience.sber.description": "Responsible for maintaining and optimizing critical systems, ensuring high availability and performance.",
+                "experience.telsi.title": "System Administrator",
+                "experience.telsi.period": "OOO SKB Telsi, June 2021–July 2022",
+                "experience.telsi.description": "Managed IT infrastructure, including servers and networks, to support business operations.",
+                "skills.title": "Skills",
+                "skills.js": "JavaScript",
+                "skills.jsx": "JSX",
+                "skills.react": "React",
+                "skills.vue": "Vue",
+                "skills.nextjs": "Next.js",
+                "skills.python": "Python",
+                "skills.fastapi": "FastAPI",
+                "skills.php": "PHP",
+                "projects.title": "Projects",
+                "projects.polyconvert.title": "Polyconvert",
+                "projects.polyconvert.description": "Online app for converting full-body human photos into 3D models.",
+                "projects.aimfinder.title": "AIMFinder",
+                "projects.aimfinder.description": "Offline web app for calibrating high-precision equipment using browser camera.",
+                "projects.mcoffee.title": "MCoffee",
+                "projects.mcoffee.description": "Mobile app for coffee discounts at MCoffee cafes.",
+                "projects.cta": "View Project",
+                "testimonials.title": "Testimonials",
+                "testimonials.telsi.quote": "“The AIMFinder program, along with other automation Kirill developed, greatly helped us.”",
+                "testimonials.telsi.author": "— SKB Telsi",
+                "testimonials.mcoffee.quote": "“Thanks for the MCoffee app; we can now offer discounts and promotions to our customers faster and more conveniently.”",
+                "testimonials.mcoffee.author": "— MCoffee Shop",
+                "tools.title": "Tools & Workflow",
+                "tools.description": "I leverage modern tools to streamline development and deliver high-quality, efficient code.",
+                "tools.vscode": "VS Code",
+                "tools.git": "Git",
+                "tools.docker": "Docker",
+                "tools.postman": "Postman",
+                "tools.figma": "Figma",
+                "tools.pycharm": "PyCharm",
+                "tools.npm": "npm",
+                "tools.webpack": "Webpack",
+                "tools.linux": "Linux",
+                "tools.jupyter": "Jupyter",
+                "contact.title": "Get in Touch",
+                "contact.invite": "Feel free to reach out to discuss projects or opportunities!",
+                "contact.email": "ptiza2029@gmail.com",
+                "contact.linkedin": "LinkedIn Profile"
+            },
+            ru: {
+                "hero.title": "Кирилл Сверчков",
+                "hero.subtitle": "Разработчик ПО и информационных систем",
+                "hero.description": "Создаю инновационные веб- и мобильные решения с использованием JavaScript, Python и Android.",
+                "hero.cta": "Посмотреть работы",
+                "about.title": "Обо мне",
+                "about.description": "Я увлеченный разработчик с опытом создания веб- и мобильных приложений. Специализируюсь на JavaScript, Python и разработке под Android, создаю масштабируемые решения, ориентированные на пользователя.",
+                "experience.title": "Опыт",
+                "experience.sber.title": "Ведущий инженер по обслуживанию",
+                "experience.sber.period": "Сбербанк (ныне Сбер), 2022–по настоящее время",
+                "experience.sber.description": "Отвечаю за обслуживание и оптимизацию критически важных систем, обеспечивая высокую доступность и производительность.",
+                "experience.telsi.title": "Системный администратор",
+                "experience.telsi.period": "ООО СКБ Телси, июнь 2021–июль 2022",
+                "experience.telsi.description": "Управлял ИТ-инфраструктурой, включая серверы и сети, для поддержки бизнес-процессов.",
+                "skills.title": "Навыки",
+                "skills.js": "JavaScript",
+                "skills.jsx": "JSX",
+                "skills.react": "React",
+                "skills.vue": "Vue",
+                "skills.nextjs": "Next.js",
+                "skills.python": "Python",
+                "skills.fastapi": "FastAPI",
+                "skills.php": "PHP",
+                "projects.title": "Проекты",
+                "projects.polyconvert.title": "Polyconvert",
+                "projects.polyconvert.description": "Онлайн-приложение для преобразования фотографий человека в полный рост в 3D-модель.",
+                "projects.aimfinder.title": "AIMFinder",
+                "projects.aimfinder.description": "Оффлайн веб-приложение для калибровки высокоточного оборудования с использованием камеры браузера.",
+                "projects.mcoffee.title": "MCoffee",
+                "projects.mcoffee.description": "Мобильное приложение для скидок на кофе в кофейнях MCoffee.",
+                "projects.cta": "Посмотреть проект",
+                "testimonials.title": "Отзывы",
+                "testimonials.telsi.quote": "“Программа AIMFinder и другая автоматизация, разработанная Кириллом, очень нам помогли.”",
+                "testimonials.telsi.author": "— СКБ Телси",
+                "testimonials.mcoffee.quote": "“Спасибо за приложение MCoffee, теперь мы можем быстрее и удобнее предлагать скидки и выгодные предложения нашим клиентам.”",
+                "testimonials.mcoffee.author": "— MCoffee Shop",
+                "tools.title": "Инструменты и рабочий процесс",
+                "tools.description": "Я использую современные инструменты для оптимизации разработки и создания высококачественного кода.",
+                "tools.vscode": "VS Code",
+                "tools.git": "Git",
+                "tools.docker": "Docker",
+                "tools.postman": "Postman",
+                "tools.figma": "Figma",
+                "tools.pycharm": "PyCharm",
+                "tools.npm": "npm",
+                "tools.webpack": "Webpack",
+                "tools.linux": "Linux",
+                "tools.jupyter": "Jupyter",
+                "contact.title": "Связаться со мной",
+                "contact.invite": "Не стесняйтесь связаться, чтобы обсудить проекты или возможности!",
+                "contact.email": "ptiza2029@gmail.com",
+                "contact.linkedin": "Профиль LinkedIn"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll("[data-translate]").forEach(element => {
+                const key = element.getAttribute("data-translate");
+                element.innerHTML = translations[lang][key] || element.innerHTML;
+            });
+            document.querySelectorAll(".lang-btn").forEach(btn => {
+                btn.classList.remove("active");
+                if (btn.textContent === lang.toUpperCase()) {
+                    btn.classList.add("active");
+                }
+            });
+            renderProjects(lang);
+        }
+
+        const projects = [
+            {
+                title: "projects.polyconvert.title",
+                description: "projects.polyconvert.description",
+                image: "https://github.com/Kamakepar2029/PolyConvert/raw/main/IMG_20250728_094438_334.jpg",
+                url: "#",
+                tags: [
+                    { name: "Python", class: "tag-python", style: "background: #306998; color: #FFD43B;" },
+                    { name: "FastAPI", class: "tag-fastapi", style: "background: #009688; color: #fff;" },
+                    { name: "PHP", class: "tag-php", style: "background: #787CB5; color: #fff;" },
+                    { name: "JavaScript", class: "tag-js", style: "background: #F0DB4F; color: #323330;" }
+                ]
+            },
+            {
+                title: "projects.aimfinder.title",
+                description: "projects.aimfinder.description",
+                image: "https://raw.githubusercontent.com/Kamakepar2029/AIMFInder_new_web/refs/heads/main/aimfinder_web.png",
+                url: "https://kamakepar2029.github.io/AIMFInder_new_web/",
+                tags: [
+                    { name: "JavaScript", class: "tag-js", style: "background: #F0DB4F; color: #323330;" },
+                    { name: "Chrome Camera API", class: "tag-chromecamera", style: "background: #4285F4; color: #fff;" },
+                    { name: "CanvasJS", class: "tag-canvasjs", style: "background: #4CAF50; color: #fff;" }
+                ]
+            },
+            {
+                title: "projects.mcoffee.title",
+                description: "projects.mcoffee.description",
+                image: "https://image.winudf.com/v2/image1/bXkubWNvZmZlZS5kaXNjb3VudF9zY3JlZW5fMF8xNzM1NDU0MzQ1XzAyNQ/screen-0.webp?fakeurl=1&type=.webp",
+                url: "https://play.google.com/store/apps/details?id=my.mcoffee.discount&hl=en_US",
+                tags: [
+                    { name: "Android", class: "tag-android", style: "background: #3DDC84; color: #fff;" },
+                    { name: "Kotlin", class: "tag-kotlin", style: "background: #B125EA; color: #fff;" },
+                    { name: "Java", class: "tag-java", style: "background: #B07219; color: #fff;" }
+                ]
+            }
+        ];
+
+        function renderProjects(lang) {
+            const projectsContainer = document.getElementById("projects-container");
+            projectsContainer.innerHTML = "";
+            projects.forEach(project => {
+                const tags = project.tags.map(tag => 
+                    `<span class="tech-tag ${tag.class}" style="${tag.style}">${tag.name}</span>`
+                ).join("");
+                const button = project.url !== "#" 
+                    ? `<a href="${project.url}" class="project-btn mt-4" data-translate="projects.cta">${translations[lang]["projects.cta"]}<i data-feather="link"></i></a>`
+                    : "";
+                const projectCard = `
+                    <div class="project-card">
+                        <img src="${project.image}" alt="${translations[lang][project.title]}" class="project-img">
+                        <h3 class="text-xl font-semibold">${translations[lang][project.title]}</h3>
+                        <p>${translations[lang][project.description]}</p>
+                        <div class="mt-2">${tags}</div>
+                        ${button}
                     </div>
-                </div>
-            </div>
-            <div class="content__box rtyu" id="Contacts">
-                <div class="content_box__description">My contacts: </div>
-                <div class="phone_me dliu">
-                    <a href="tel:+7 (963) 648 72 48"><img src="/assets/images/phone-line 1.png"> <hg>+7 (963) 648 72 48</hg></a>
-                </div>
-                <div class="email_me dliu">
-                    <a href="mailto:kirill@kamakepar.ru"><img src="/assets/images/email 1.png"> <hg>kirill@kamakepar.ru</hg></a>
-                </div>
-                <div class="whatsapp_me dliu">
-                    <a href="https://api.whatsapp.com/send?phone=79636487248&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C.%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%BE%D0%B2%D1%83%D1%82%20..."><img src="/assets/images/whatsapp-round-line 1.png"> <hg>+7 (963) 648 72 48</hg></a>
-                </div>
-                <div class="frame">
-                    <script src="//mailer.i.bizml.ru/apps/fc3/build/loader.js" async sp-form-id="51efac4c1dc15f9a9f5ab55841e2608adf879eae57d5d45fceab6134a66a0aba"></script>
-                </frame>
-            </div>
-    </body>
-    <script src="/assets/js/jquery.js"></script>
-    <script src="/assets/js/jquery.appear.js"></script>
-    <script src="/assets/js/main.js?v=1.2"></script>
+                `;
+                projectsContainer.innerHTML += projectCard;
+            });
+            feather.replace();
+        }
+
+        AOS.init({ duration: 1000 });
+        feather.replace();
+        setLanguage("en");
+
+        const typed = new Typed('#contact-title', {
+            strings: [translations.en["contact.title"], translations.ru["contact.title"]],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true,
+            showCursor: false
+        });
+    </script>
+</body>
 </html>
